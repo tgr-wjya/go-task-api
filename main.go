@@ -2,24 +2,28 @@ package main
 
 import (
 	"fmt"
+	"net/http"
+	"task-api/tasks"
 )
 
-// I'd initialize this on a separate file
-// But I don't know how you'd do it in go, so let's just keep this here.
-type Task struct {
-	ID     int
-	Title  string
-	Status string
+func getHelloWorld(w http.ResponseWriter, r *http.Request) {
+	type Body struct {
+		Greet string `json:"greet"`
+	}
+
+	body := Body{
+		Greet: "Hello, World",
+	}
+
+	tasks.WriteJSON(w, http.StatusOK, body)
 }
 
 func main() {
-	task1 := Task{
-		ID:     1,
-		Title:  "Learn Go",
-		Status: "in-progress",
-	}
+	mux := http.NewServeMux()
 
-	fmt.Println("Hello", task1.ID)
-	fmt.Println("Hello", task1.Title)
-	fmt.Println("Hello", task1.Status)
+	mux.HandleFunc("GET /", getHelloWorld)
+	mux.HandleFunc("GET /tasks/all", tasks.GetAll)
+
+	fmt.Println("Server listening at 8080")
+	http.ListenAndServe(":8080", mux)
 }

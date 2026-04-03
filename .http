@@ -1,0 +1,7 @@
+@baseUrl = http://localhost:8080
+
+### GET ALL tasks
+GET {{baseUrl}}/tasks/all
+
+### GET hello world on root
+GET {{baseUrl}}/
