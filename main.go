@@ -8,11 +8,15 @@ import (
 
 func getHelloWorld(w http.ResponseWriter, r *http.Request) {
 	type Body struct {
-		Greet string `json:"greet"`
+		App    string `json:"app"`
+		Author string `json:"author"`
+		Repo   string `json:"repo"`
 	}
 
 	body := Body{
-		Greet: "Hello, World",
+		App:    "Task API Go",
+		Author: "Tegar Wijaya Kusuma",
+		Repo:   "https://github.com/tgr-wjya/go-task-api",
 	}
 
 	tasks.WriteJSON(w, http.StatusOK, body)
