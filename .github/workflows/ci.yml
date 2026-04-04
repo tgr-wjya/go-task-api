@@ -29,13 +29,13 @@ jobs:
       - name: Type check / vet
         run: go vet ./...
 
-      - name: Lint
-        run: gofmt -w *.go
-
   registries:
     needs: quality-check
     runs-on: ubuntu-24.04
     if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      packages: write
 
     steps:
       - uses: actions/checkout@v6.0.2
