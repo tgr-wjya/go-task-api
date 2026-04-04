@@ -22,10 +22,16 @@ func getHelloWorld(w http.ResponseWriter, r *http.Request) {
 	tasks.WriteJSON(w, http.StatusOK, body)
 }
 
+func getPlain(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	fmt.Fprint(w, "Hello, World")
+}
+
 func main() {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("GET /", getHelloWorld)
+	mux.HandleFunc("GET /plain", getPlain)
 	mux.HandleFunc("GET /tasks/all", tasks.GetAll)
 
 	fmt.Println("Server listening at 8080")

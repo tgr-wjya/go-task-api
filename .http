@@ -5,3 +5,6 @@ GET {{baseUrl}}/tasks/all
 
 ### GET hello world on root
 GET {{baseUrl}}/
+
+### GET plain hello world on /plain
+GET {{baseUrl}}/plain

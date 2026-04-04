@@ -1,6 +1,6 @@
 # task api but in golang
 
-## 3 april 2026
+## 4 april 2026
 
 > yes, i'm rewriting my task-api project in golang
 
@@ -94,6 +94,8 @@ and dispatches them to the correct handler.
     // And you're only allowed to use the normal var at package level.
     var x int = 10    
     ```
+
+- to initialize port in go, you need to use `:` at the start of it like `:8080`
 
 ## stack
 
