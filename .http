@@ -1,7 +1,14 @@
 @baseUrl = http://localhost:8080
+@secondUrl = https://go-task-api.tegarwk.dev/
 
 ### GET ALL tasks
 GET {{baseUrl}}/tasks/all
+
+### GET plain
+GET {{secondUrl}}/plain
+
+### GET root
+GET {{secondUrl}}/
 
 ### GET hello world on root
 GET {{baseUrl}}/

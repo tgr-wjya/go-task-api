@@ -24,6 +24,7 @@ func getHelloWorld(w http.ResponseWriter, r *http.Request) {
 
 func getPlain(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	w.WriteHeader(http.StatusOK)
 	fmt.Fprint(w, "Hello, World")
 }
 
