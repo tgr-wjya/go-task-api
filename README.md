@@ -1,6 +1,8 @@
 # task api but in golang
 
-## 4 april 2026
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/tgr-wjya/go-task-api/ci.yml)
+
+## 5 april 2026
 
 > yes, i'm rewriting my task-api project in golang
 
